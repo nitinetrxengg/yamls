@@ -1,0 +1,14 @@
+apiVersion: nmstate.io/v1beta1
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: vlan-ens785f1-policy
+spec:
+  desiredState:
+    interfaces:
+    - name: ens785f1.510
+      description: VLAN using ens785f1
+      type: vlan
+      state: up
+      vlan:
+        base-iface: ens785f1
+        id: 510
