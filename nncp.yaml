@@ -1,0 +1,18 @@
+kind: NodeNetworkConfigurationPolicy
+metadata:
+  name: br1-ens785f1-policy
+spec:
+  desiredState:
+    interfaces:
+      - name: br1.vlan510
+        description: Linux bridge with ens785f1 as a port
+        type: linux-bridge
+        state: up
+        ipv4:
+          enabled: false
+        bridge:
+          options:
+            stp:
+              enabled: false
+          port:
+            - name: ens785f1.510
